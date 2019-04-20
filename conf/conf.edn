@@ -1,4 +1,3 @@
 {:roll/httpkit {:port 5000}
 
- :roll/reload {:css ["resources/public/css"]
-               :page ["resources/public2/jade"]}}
+ :roll/reload {:css ["resources/public/css"]}}

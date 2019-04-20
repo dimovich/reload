@@ -1,12 +1,15 @@
 (ns reload.client
   (:require [taoensso.sente :as sente]
             [taoensso.sente.packers.transit :as sente-transit]
+            [ajax.core :refer [GET]]
             [reload.css :as rcss]))
 
 
 
 (defn reload-page []
-  (js/window.location.reload true))
+  ;; try getting page first and after reload it
+  (GET window.location.href
+       {:handler #(js/window.location.reload true)}))
 
 
 

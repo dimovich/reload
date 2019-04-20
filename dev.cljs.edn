@@ -1,6 +1,8 @@
+^{:watch-dirs ["src"]
+  :open-url false}
 {:main reload.client
  :output-to "resources/public/js/reload.js"
  :output-dir "resources/public/js/out"
  :asset-path "js/out"
- :optimizations :advanced
+ :optimizations :none
  :parallel-build true}
