@@ -1,0 +1,16 @@
+{:paths ["src"]
+
+ :deps
+ {org.clojure/clojure       {:mvn/version "1.10.0"}
+  org.clojure/clojurescript {:mvn/version "1.10.520"}
+  com.taoensso/sente   {:mvn/version "1.13.1"}
+  com.cognitect/transit-cljs {:mvn/version "0.8.256"}}
+
+ :aliases
+ {:cljs
+  {:main-opts ["-m cljs.main -co prod.cljs.edn -c reload.client"]}
+
+  :cider
+  {:extra-paths ["resources"]
+   :extra-deps {com.bhauman/figwheel-main {:mvn/version "0.2.0"}
+                roll {:local/root "../roll"}}}}}
