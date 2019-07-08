@@ -9,6 +9,8 @@
            goog.debug.Console))
 
 
+;; code taken from https://github.com/bhauman/figwheel-main
+
 
 (defonce logger (glog/getLogger "CSS Reload"))
 
