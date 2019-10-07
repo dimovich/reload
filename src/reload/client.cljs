@@ -30,12 +30,16 @@
       nil)))
 
 
+(def ?csrf-token
+  (when-let [el (.getElementById js/document "sente-csrf-token")]
+    (.getAttribute el "data-csrf-token")))
 
 
 (defn init-sente []
   (let [{:keys [chsk ch-recv send-fn state]}
         (sente/make-channel-socket-client!
          "/chsk"
+         ?csrf-token
          {:packer (sente-transit/get-transit-packer)})]
     {:chsk       chsk
      :ch-chsk    ch-recv
